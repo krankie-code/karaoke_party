@@ -1,0 +1,29 @@
+{
+  "name": "tube_karaoke",
+  "version": "1.0.0",
+  "description": "Youtube Karaoke App - WDI Unit 2 Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiiba/tube-karaoke.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shiiba/tube-karaoke/issues"
+  },
+  "homepage": "https://github.com/shiiba/tube-karaoke#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.4.2",
+    "express": "^4.13.4",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.4.19",
+    "morgan": "^1.7.0"
+  }
+}
