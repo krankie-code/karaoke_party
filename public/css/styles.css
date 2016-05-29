@@ -1,0 +1,17 @@
+*{
+/*  background-color: yellow;*/
+}
+
+body{
+  background-color: #5DEDFC;
+}
+
+#rooms-container{
+  margin: 0 auto;
+  text-align: center;
+  width: 40%;
+}
+
+.hidden{
+  display: none;
+}

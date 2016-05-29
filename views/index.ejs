@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../views/partials/head.ejs %>
+</head>
+<body>
+  <div id="rooms-container">
+    <h3>Rooms Currently Singing:</h3>
+    <br>
+    <% for(var i = 0; i < rooms.length; i++){ %>
+      <div id="room-name">
+        <a href="/rooms/<%= rooms[i].id %>"><%= rooms[i].name %></a> 
+        <br>
+        <hr>
+        <br>
+      </div>
+    <% } %>
+    <a href="/rooms/new">Start a New Room</a>
+  </div>
+</body>
+</html>

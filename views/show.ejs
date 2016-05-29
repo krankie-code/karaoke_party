@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../views/partials/head.ejs %>
+  </head>
+  <body>
+    
+    <div class="hidden" id="video-id"><%= room.playlist[0].videoId %></div>
+    <div id="player"></div>
+    <br>
+    <form action="/rooms/<%= room.id %>/songs/next" method="GET">
+      <button id="next-song">Next Song</button>
+    </form>
+  <footer>
+    <% include ../views/partials/footer.ejs %>
+  </footer>
+  </body>
+</html>

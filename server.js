@@ -28,7 +28,8 @@ app.use(methodOverride(function(req, res){
 mongoose.connect(db);
 
 // controllers
-
+var roomsController = require('./controllers/rooms.js');
+app.use('/rooms', roomsController);
 
 // listen
 app.listen(port);
