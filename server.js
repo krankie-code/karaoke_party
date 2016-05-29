@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 // var localDB = process.env.MONGODB_URI || "mongodb://localhost/tube_karaoke";
-var mongoUri = process.env.MONGOLAB_URL || "mongodb://localhost/tube_karaoke";
+var mongoUri = process.env.MONGOLAB_URI || "mongodb://localhost/tube_karaoke";
 var ejs = require('ejs');
 var port = process.env.PORT || 3000;
 
