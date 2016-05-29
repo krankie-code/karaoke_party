@@ -6,7 +6,8 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
-var db = process.env.MONGODB_URI || "mongodb://localhost/tube_karaoke";
+// var localDB = process.env.MONGODB_URI || "mongodb://localhost/tube_karaoke";
+var mongoUri = process.env.MONGOLAB_URL || "mongodb://localhost/tube_karaoke";
 var ejs = require('ejs');
 var port = process.env.PORT || 3000;
 
@@ -25,7 +26,7 @@ app.use(methodOverride(function(req, res){
 }));
 
 // database
-mongoose.connect(db);
+mongoose.connect(mongoUri);
 
 // controllers
 var roomsController = require('./controllers/rooms.js');
