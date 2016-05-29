@@ -68,9 +68,10 @@ router.post('/', function(req,res){
       console.log(err);
     } else {
       console.log('created new room');
+      res.redirect('/rooms/' + room.id + '/songs/add');
     }
-  }).then(function(room){
-    var results;
+  // }).then(function(room){
+  //   var results;
     // console.log('room obj is: ' + room);
     // request('https://api-ssl.bitly.com/v3/shorten?access_token=' + process.env.BITLY_KEY + '&format=txt&longUrl=' + currentDomain + '%2Frooms%2F' + room.id + '%2Fsongs%2Fadd', function(error, response, body){
     //   console.log(body);
@@ -88,7 +89,6 @@ router.post('/', function(req,res){
     //   }
     // })  
   })
-  res.redirect('/rooms/' + room.id + '/songs/add');
 });
 
 module.exports = router;
