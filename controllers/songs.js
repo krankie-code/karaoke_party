@@ -69,7 +69,7 @@ router.post('/:id/songs/', function(req,res){
   searchTerms = searchTerms.toLowerCase().replace(/ /g,'+');
   console.log(searchTerms);
   var results;
-  request('https://www.googleapis.com/youtube/v3/search?part=snippet&q=karaoke+' + searchTerms + '&type=video&key=' + process.env.GOOGLE_KEY, function(error, response, body){
+  request('https://www.googleapis.com/youtube/v3/search?part=snippet&q=karaoke+' + searchTerms + '&maxResults=10&videoEmbeddable=true&type=video&key=' + process.env.GOOGLE_KEY, function(error, response, body){
     if(!error && response.statusCode == 200){
       results = JSON.parse(body);
       var returnedSongs = [];
@@ -77,7 +77,7 @@ router.post('/:id/songs/', function(req,res){
         var song = new Songs({
           videoId: results.items[i].id.videoId,
           title: results.items[i].snippet.title,
-          img: results.items[i].snippet.thumbnails.medium.url
+          img: results.items[i].snippet.thumbnails.default.url
         });
         returnedSongs.push(song);
       }

@@ -4,23 +4,32 @@
     <% include ../views/partials/head.ejs %>
   </head>
   <body>
-    <div class="hidden" id="video-id"><%= room.playlist[0].videoId %></div>
-    <div id="player"></div>
-    <br>
-    <form action="/rooms/<%= room.id %>/songs/next" method="GET">
-      <button id="next-song">Next Song</button>
-    </form>
-    <br>
-    <br>
-    <h3>Up Next:</h3>
-    <hr>
-    <% for(var i = 1; i < room.playlist.length; i++){ %>
-      <strong><%= room.playlist[i].title %></strong><br>
-      <img src="<%= room.playlist[i].img %>">
-      <br>
-      <hr>
-      <br>
-    <% } %>
+    <div id="room-container">
+      <div id="left-column">
+        <div class="hidden" id="video-id"><%= room.playlist[0].videoId %></div>
+        <div id="player"></div>
+        <br>
+        <div id="next-button">
+          <form action="/rooms/<%= room.id %>/songs/next" method="GET">
+            <button id="next-song">Next Song</button>
+          </form>
+        </div>
+        <div id="bitly-link"></div>
+      </div>
+      <div id="right-column">
+        <% if(room.playlist.length > 0) { %>
+          <h3>Up Next:</h3>
+          <hr>
+          <% for(var i = 1; i < room.playlist.length; i++){ %>
+            <strong><%= room.playlist[i].title %></strong><br>
+            <img src="<%= room.playlist[i].img %>">
+            <br>
+            <hr>
+            <br>
+          <% } %>
+        <% } %>
+      </div>
+    </div>
   <footer>
     <% include ../views/partials/footer.ejs %>
   </footer>

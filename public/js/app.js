@@ -25,8 +25,8 @@
     YTdeferred.done(function(YT) {
       console.log('executing iframe api ready')
       player = new YT.Player('player', {
-        height: '390',
-        width: '640',
+        height: '670',
+        width: '1100',
         videoId: videoId,
         events: {
           'onReady': onPlayerReady,

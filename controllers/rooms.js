@@ -6,6 +6,12 @@ var Rooms = require('../models/rooms.js');
 var Songs = require('../models/songs.js');
 var songsController = require('./songs.js');
 router.use('/', songsController);
+var currentDomain = 'http%3A%2F%2Flocalhost:3000';
+var util = require('util');
+
+function deepPrint(x){
+  console.log(util.inspect(x, {showHidden: false, depth: null}));
+}
 
 // rooms index
 router.get('/', function(req,res){
@@ -54,14 +60,33 @@ router.put('/:id', function(req,res){
 // create room
 router.post('/', function(req,res){
   console.log('creating room');
-  console.log('req.body: ' + req.body);
+  console.log('req.body: ');
+  deepPrint(req.body);
   var room = new Rooms(req.body);
-  room.save(function(err){
+  room.save(function(err, room){
     if(err){
       console.log(err);
     } else {
       console.log('created new room');
     }
+  }).then(function(room){
+    var results;
+    // console.log('room obj is: ' + room);
+    // request('https://api-ssl.bitly.com/v3/shorten?access_token=' + process.env.BITLY_KEY + '&format=txt&longUrl=' + currentDomain + '%2Frooms%2F' + room.id + '%2Fsongs%2Fadd', function(error, response, body){
+    //   console.log(body);
+    //   if(!error && response.statusCode == 200){
+    //     results = JSON.parse(body);
+    //     console.log(results);
+    //     room.link = results;
+    //     room.save(function(err){
+    //       if(err){
+    //         console.log(err);
+    //       } else {
+    //         console.log('saved room link');
+    //       }
+    //     })
+    //   }
+    // })  
   })
   res.redirect('/rooms/' + room.id + '/songs/add');
 });

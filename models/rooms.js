@@ -7,7 +7,8 @@ var roomSchema = new mongoose.Schema({
   name: String,
   playlist: [SongSchema], // later add name of room?
   searchResults: [SongSchema],
-  setup: {type: Boolean, default: true}
+  setup: {type: Boolean, default: true},
+  link: String
 });
 
 // model methods

@@ -12,6 +12,22 @@ body{
   width: 40%;
 }
 
+#room-container{
+  width: 100%;
+}
+
+#left-column{
+  width: 80%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#right-column{
+  width: 19%;
+  display: inline-block;
+  vertical-align: top;
+}
+
 .hidden{
   display: none;
 }
