@@ -42,19 +42,22 @@ router.put('/:id/songs/', function(req,res){
     console.log('selected song id: ' + selectedSong.id);
     room.playlist.push({ _id: selectedSong.id, videoId: selectedSong.videoId, title: selectedSong.title, img: selectedSong.img });
     room.searchResults = [];
-    room.save(function(err){
-      if(err){
-        console.log(err);
-      } else {
-        console.log('saved selected song to queue');
-      }
-      if(room.setup === true){
-        room.setup = false;
+    if(room.setup === true){
+      room.setup = false;
+      room.save(function(err){
+        if(err){
+          console.log(err)
+        }
         res.redirect('/rooms/' + req.params.id);
-      } else {
+      })
+    } else {
+      room.save(function(err){
+        if(err){
+          console.log(err)
+        }
         res.redirect('/rooms/' + req.params.id + '/songs/add');
-      }
-    });
+      })
+    }
   })
 });
 

@@ -10,8 +10,8 @@ var roomSchema = new mongoose.Schema({
   setup: {type: Boolean, default: true}
 });
 
-
 // model methods
+
 
 // map to mongoose
 var Rooms = mongoose.model('Rooms', roomSchema);
