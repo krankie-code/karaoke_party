@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../views/partials/head.ejs %>
+  </head>
+<body id="edit">
+  <div id="rooms-container">
+    <h3>Edit Room</h3>
+    <form action="/rooms/<%= room.id %>" method="POST">
+      <label for="name"><strong>Room Name:</strong></label>
+      <input type="text" name="name" id="name" value="<%= room.name %>" placeholder="Room Name">
+      <br>
+      <input type="hidden" name="_method" value="PUT"/>
+      <button>Update</button>
+    </form>
+    <br>
+    <a href="/rooms" class="nav-links">Return to Index</a>
+  </div>
+</body>
+</html>

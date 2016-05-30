@@ -27,7 +27,7 @@ router.get('/new', function(req,res){
   res.render('new.ejs');
 });
 
-// room player (show pg)
+// show room (player page)
 router.get('/:id', function(req,res){
   Rooms.findById(req.params.id).then(function(room){
     console.log('getting room show: ' + room);
@@ -53,7 +53,7 @@ router.put('/:id', function(req,res){
     } else {
       console.log(room);
     }
-    res.redirect('/rooms' + req.params.id);
+    res.redirect('/rooms/' + req.params.id);
   });
 });
 
@@ -89,6 +89,15 @@ router.post('/', function(req,res){
     //   }
     // })  
   })
+});
+
+// delete room
+router.delete('/:id', function(req,res){
+  console.log('deleting room' + req.params.id.name);
+  console.log('req params fields: ' 
+        + Object.getOwnPropertyNames(req.params));
+  Rooms.remove({_id: req.params.id}).exec();
+  res.redirect('/rooms');
 });
 
 module.exports = router;
