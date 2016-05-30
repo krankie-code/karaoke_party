@@ -8,19 +8,18 @@
     <h3>Rooms Currently Singing:</h3>
     <br>
     <% for(var i = 0; i < rooms.length; i++){ %>
-      <div id="room-name">
+      <div class="room-name">
         <a href="/rooms/<%= rooms[i].id %>"><%= rooms[i].name %></a>
         <a href="/rooms/<%= rooms[i].id %>/edit">Edit Room</a>
         <form action="/rooms/<%= rooms[i].id %>" method="POST">
           <input type="hidden" name="_method" value="DELETE"/>
-          <button id="delete">Shut Down Room</button>
+          <button id="delete">b</button>
         </form>
-        <br>
-        <hr>
-        <br>
       </div>
     <% } %>
-    <a href="/rooms/new">Start a New Room</a>
+    <br>
+    <br>
+    <a href="/rooms/new" class="btn">Start a New Room</a>
   </div>
 </body>
 </html>

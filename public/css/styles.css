@@ -1,10 +1,29 @@
-*{
-/*  background-color: yellow;*/
+@import url(https://fonts.googleapis.com/css?family=Allerta+Stencil);
+@font-face{
+  font-family: 'ostrich-sans';
+  src: url('../fonts/OstrichSans-Bold.otf');
+}
+@font-face{
+  font-family: 'icons';
+  src: url('../fonts/fontello.ttf');
 }
 
+
 body{
-  background-color: #5DEDFC;
+  background-color: rgb(17, 17, 17);
 }
+
+hr{
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+a{
+  color: white;
+}
+
+/*Containers*/
 
 #rooms-container{
   margin: 0 auto;
@@ -14,20 +33,112 @@ body{
 
 #room-container{
   width: 100%;
+  margin-top: 20px;
 }
 
+.room-name{
+  width: 100%;
+  height: 80px;
+  border: solid 2px #8c8b8b;
+  padding-top: 10px;
+}
+/*
+.room-name:hover{
+  background: #8c8b8b;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}*/
+
 #left-column{
-  width: 80%;
+  width: 79%;
   display: inline-block;
   vertical-align: top;
+  margin: 0;
 }
 
 #right-column{
   width: 19%;
   display: inline-block;
   vertical-align: top;
+  margin: 0;
+  overflow: auto;
+}
+
+/*Page Specific Styles*/
+h3{
+  color: rgb(230, 230, 230);
+  font-family: 'ostrich-sans';
+  font-size: 60px;
+}
+
+#index a{
+  margin-right: 10px;
+}
+
+#index form{
+  margin-top: 20px;
+  /*text-decoration: none;*/
+}
+
+#show h3{
+  color: rgb(230, 230, 230);
+  font-family: 'Allerta Stencil', sans-serif;
+  font-size: 24px;
+  margin-top: 0;
+}
+
+#text{
+  color: rgb(154, 154, 154);
+  font-family: Arial;
+  font-size: 15px;
+}
+
+#delete{
+  font-family: 'icons';
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
 }
 
 .hidden{
   display: none;
 }
+
+/*Buttons*/
+
+.btn {
+  border: none;
+  font-family: Arial;
+  background: none;
+  cursor: pointer;
+  padding: 15px 40px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  outline: none;
+  border-radius: 50px;
+  border: 3px solid #fff;
+  color: #fff;
+  overflow: hidden;
+  text-decoration: none;
+  position: relative;
+  right: 10px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn:active {
+  border-color: #17954c;
+  color: rgb(230, 230, 230);
+}
+
+.btn:hover {
+  background: #8c8b8b;
+}
+

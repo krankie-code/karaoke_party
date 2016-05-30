@@ -11,21 +11,23 @@
         <br>
         <div id="next-button">
           <form action="/rooms/<%= room.id %>/songs/next" method="GET">
-            <button id="next-song">Next Song</button>
+            <button class="btn btn-play" id="next-song">Next Song</button>
           </form>
         </div>
         <div id="bitly-link"></div>
       </div>
       <div id="right-column">
         <% if(room.playlist.length > 0) { %>
-          <h3>Up Next:</h3>
+          <h3>UP NEXT:</h3>
           <hr>
           <% for(var i = 1; i < room.playlist.length; i++){ %>
-            <strong><%= room.playlist[i].title %></strong><br>
-            <img src="<%= room.playlist[i].img %>">
-            <br>
-            <hr>
-            <br>
+            <div id="text">
+              <strong><%= room.playlist[i].title %></strong><br>
+              <img src="<%= room.playlist[i].img %>">
+              <br>
+              <hr>
+              <br>
+            </div>
           <% } %>
         <% } %>
       </div>

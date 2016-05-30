@@ -9,15 +9,16 @@
       <h3>Search for a Song:</h3>
       <br>
       <form action="/rooms/<%= room.id %>/songs" method="POST">
-        <label for="search"><strong>Search for a song:</strong></label>
+        <label id="text" for="search"><strong>Search for a song:</strong></label>
         <input type="text" name="search" id="search">
         <br>
-        <button>Search</button>
+        <button class="btn">Search</button>
       </form>
-      <hr>
     </div>
     <div id="results-container">
     <% if(room.searchResults.length > 0){ %>
+      <hr>
+      <br>
       <h3>Search Results:</h3>
       <br>
       <% for(var i = 0; i < room.searchResults.length; i++){ %>

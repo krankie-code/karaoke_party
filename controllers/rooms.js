@@ -27,6 +27,13 @@ router.get('/new', function(req,res){
   res.render('new.ejs');
 });
 
+// API V1
+router.get('/api/v1', function(req,res){
+  Rooms.find().then(function(rooms){
+    res.json(rooms);
+  })
+});
+
 // show room (player page)
 router.get('/:id', function(req,res){
   Rooms.findById(req.params.id).then(function(room){
