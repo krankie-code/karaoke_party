@@ -104,7 +104,7 @@ h3{
   top: 150px;
 }
 
-#index, #search{
+#index, #search, #edit, #new{
   background: url('../images/microphone.jpeg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -224,5 +224,43 @@ h3{
   margin: 5px 10px;
   padding: 5px 10px;
   border: 1px solid #fff;
+}
+
+@media (max-width: 550px){
+  *{
+    /*background-color: red;*/
+  }
+  .rooms-container{
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  #search .rooms-container{
+    margin-top: 30px;
+  }
+
+  #index-page{
+    top: 30px;
+  }
+
+  #search h3, #index h3, #edit h3, #new h3 {
+    font-size: 28px;
+    font-family: 'ostrich-sans';
+  }
+
+  #header{
+    padding: .7px 0 .3rem 0;
+  }
+
+  #header a{
+    font-size: 14px;
+  }
+
+  .btn{
+    margin: 8px 10px;
+    padding: 8px 10px;
+    border: 1px solid #fff;
+    font-size: 12px;
+  }
 }
 
