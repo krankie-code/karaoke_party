@@ -7,7 +7,6 @@ var cookieParser = require('cookie-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var localDB = process.env.MONGODB_URI || "mongodb://localhost/tube_karaoke";
-// var mongoUri = "mongodb://heroku_r9mnk3tt:hl8t1uq2rlnt04aq21e0jck8ap@ds019063.mlab.com:19063/heroku_r9mnk3tt" || "mongodb://localhost/tube_karaoke";
 var ejs = require('ejs');
 var port = process.env.PORT || 3000;
 
