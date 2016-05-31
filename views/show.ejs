@@ -5,6 +5,7 @@
   </head>
   <body id="show">
     <div id="room-container">
+      <% if(room.playlist.length >0) { %>
       <div id="left-column">
         <div class="hidden" id="video-id"><%= room.playlist[0].videoId %></div>
         <div id="player"></div>
@@ -16,6 +17,10 @@
         </div>
         <div id="bitly-link"></div>
       </div>
+      <% } else { %>
+        <h3>Your Queue is Empty! <a href="/rooms/<%= room.id %>/songs/add">Add a song.</a></h3>
+      <% } %>
+
       <div id="right-column">
         <% if(room.playlist.length > 0) { %>
           <h3>UP NEXT:</h3>
