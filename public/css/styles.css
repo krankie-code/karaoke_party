@@ -248,6 +248,10 @@ h3{
     font-family: 'ostrich-sans';
   }
 
+  #search, #edit, #new{
+  background: rgb(17, 17, 17);
+}
+
   #header{
     padding: .7px 0 .3rem 0;
   }
