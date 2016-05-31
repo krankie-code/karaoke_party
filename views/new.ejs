@@ -4,7 +4,10 @@
     <% include ../views/partials/head.ejs %>
   </head>
 <body id="new">
-  <div id="rooms-container">
+  <header>
+    <% include ../views/partials/header.ejs %>
+  </header>
+  <div class="rooms-container">
     <h3>Create A New Room</h3>
     <form action="/rooms/" method="POST">
       <label id="text" for="name"><strong>Name Your Room:</strong></label>

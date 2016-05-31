@@ -4,17 +4,26 @@
   <% include ../views/partials/head.ejs %>
 </head>
 <body id="index">
-  <div id="rooms-container">
+  <header>
+    <% include ../views/partials/header.ejs %>
+  </header>
+  <div class="rooms-container" id="index-page">
     <h3>Rooms Currently Singing:</h3>
     <br>
     <% for(var i = 0; i < rooms.length; i++){ %>
       <div class="room-name">
-        <a href="/rooms/<%= rooms[i].id %>"><%= rooms[i].name %></a>
-        <a href="/rooms/<%= rooms[i].id %>/edit">Edit Room</a>
-        <form action="/rooms/<%= rooms[i].id %>" method="POST">
-          <input type="hidden" name="_method" value="DELETE"/>
-          <button id="delete">b</button>
-        </form>
+        <div class="room-elements">
+          <a href="/rooms/<%= rooms[i].id %>"><%= rooms[i].name %></a>
+        </div>
+        <div class="room-elements">
+          <a href="/rooms/<%= rooms[i].id %>/edit">Edit Room</a>
+        </div>
+        <div class="room-elements">
+          <form action="/rooms/<%= rooms[i].id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE"/>
+            <button id="delete">b</button>
+          </form>
+        </div>
       </div>
     <% } %>
     <br>

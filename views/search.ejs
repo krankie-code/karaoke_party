@@ -4,13 +4,16 @@
   <% include ../views/partials/head.ejs %>
 </head>
 <body id="search">
-  <div id="rooms-container">
+  <header>
+    <% include ../views/partials/header.ejs %>
+  </header>
+  <div class="rooms-container">
     <div id="search-container">
       <h3>Search for a Song:</h3>
       <br>
       <form action="/rooms/<%= room.id %>/songs" method="POST">
         <label id="text" for="search"><strong>Search for a song:</strong></label>
-        <input type="text" name="search" id="search">
+        <input type="text" name="search" id="search-box">
         <br>
         <button class="btn">Search</button>
       </form>
@@ -29,10 +32,10 @@
           <div id="image">
             <img src="<%= room.searchResults[i].img %>">
           </div>
-          <form action="/rooms/<%= room.id %>/songs" method="POST">
+          <form id="queue-btn" action="/rooms/<%= room.id %>/songs" method="POST">
             <input type="hidden" name="id" value="<%= room.searchResults[i].id %>"/>
             <input type="hidden" name="_method" value="PUT"/>
-            <button>Add Song To Queue</button>
+            <button class="btn btn-small">Add Song To Queue</button>
           </form>
           <hr>
         </div>

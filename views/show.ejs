@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <% include ../views/partials/head.ejs %>
-  </head>
-  <body id="show">
-    <div id="room-container">
-      <% if(room.playlist.length >0) { %>
-      <div id="left-column">
-        <div class="hidden" id="video-id"><%= room.playlist[0].videoId %></div>
-        <div id="player"></div>
-        <br>
-        <div id="next-button">
-          <form action="/rooms/<%= room.id %>/songs/next" method="GET">
-            <button class="btn btn-play" id="next-song">Next Song</button>
-          </form>
-        </div>
-        <div id="bitly-link"></div>
+<head>
+  <% include ../views/partials/head.ejs %>
+</head>
+<body id="show">
+  <div class="room-container">
+    <% if(room.playlist.length >0) { %>
+    <div id="left-column">
+      <div class="hidden" id="video-id"><%= room.playlist[0].videoId %></div>
+      <div id="player"></div>
+      <br>
+      <div id="next-button">
+        <form action="/rooms/<%= room.id %>/songs/next" method="GET">
+          <button class="btn btn-play" id="next-song">Next Song</button>
+        </form>
       </div>
-      <% } else { %>
-        <h3>Your Queue is Empty! <a href="/rooms/<%= room.id %>/songs/add">Add a song.</a></h3>
-      <% } %>
-
-      <div id="right-column">
-        <% if(room.playlist.length > 0) { %>
-          <h3>UP NEXT:</h3>
-          <hr>
-          <% for(var i = 1; i < room.playlist.length; i++){ %>
-            <div id="text">
-              <strong><%= room.playlist[i].title %></strong><br>
-              <img src="<%= room.playlist[i].img %>">
-              <br>
-              <hr>
-              <br>
-            </div>
-          <% } %>
-        <% } %>
-      </div>
+      <div id="bitly-link"></div>
     </div>
+    <% } else { %>
+      <h3>Your Queue is Empty! <a href="/rooms/<%= room.id %>/songs/add">Add a song.</a></h3>
+    <% } %>
+
+    <div id="right-column">
+      <% if(room.playlist.length > 0) { %>
+        <h3>UP NEXT:</h3>
+        <hr>
+        <% for(var i = 1; i < room.playlist.length; i++){ %>
+          <div id="text">
+            <strong><%= room.playlist[i].title %></strong><br>
+            <img src="<%= room.playlist[i].img %>">
+            <br>
+            <hr>
+            <br>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+  </div>
   <footer>
     <% include ../views/partials/footer.ejs %>
   </footer>
