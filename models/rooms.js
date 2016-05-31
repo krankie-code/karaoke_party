@@ -5,10 +5,10 @@ var SongSchema = require('./songs.js').schema;
 // define schema
 var roomSchema = new mongoose.Schema({
   name: String,
+  bitlyLink: {type: String, default: null},
   playlist: [SongSchema], // later add name of room?
   searchResults: [SongSchema],
   setup: {type: Boolean, default: true},
-  link: String
 });
 
 // model methods

@@ -123,7 +123,7 @@ h3{
 
 #show h3{
   color: rgb(230, 230, 230);
-  font-family: 'Allerta Stencil', sans-serif;
+  font-family: 'ostrich-sans';
   font-size: 24px;
   margin-top: 0;
 }
@@ -144,6 +144,28 @@ h3{
   color: rgb(154, 154, 154);
   font-family: Arial;
   font-size: 15px;
+}
+
+#controls{
+  display: inline-block;
+  width: 100%;
+  height: 100px;
+  color: white;
+}
+
+#next-button, #bitly-link{
+  width: 48%;
+  float: left;
+}
+
+#bitly-link{
+  margin-top: 40px;
+  text-align: right;
+  font-size: 14px;
+}
+
+#bitly{
+  font-size: 18px;
 }
 
 #delete{

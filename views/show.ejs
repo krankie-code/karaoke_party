@@ -4,21 +4,25 @@
   <% include ../views/partials/head.ejs %>
 </head>
 <body id="show">
-  <div class="room-container">
+  <div id="room-container">
     <% if(room.playlist.length >0) { %>
     <div id="left-column">
       <div class="hidden" id="video-id"><%= room.playlist[0].videoId %></div>
       <div id="player"></div>
       <br>
-      <div id="next-button">
-        <form action="/rooms/<%= room.id %>/songs/next" method="GET">
-          <button class="btn btn-play" id="next-song">Next Song</button>
-        </form>
+      <div id="controls">
+        <div id="next-button">
+          <form action="/rooms/<%= room.id %>/songs/next" method="GET">
+            <button class="btn btn-play" id="next-song">Next Song</button>
+          </form>
+        </div>
+        <div id="bitly-link">Add Songs To This Room:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="bitly"><%= room.bitlyLink %></span></div>
       </div>
-      <div id="bitly-link"></div>
     </div>
     <% } else { %>
+      <div class="rooms-container">
       <h3>Your Queue is Empty! <a href="/rooms/<%= room.id %>/songs/add">Add a song.</a></h3>
+      </div>
     <% } %>
 
     <div id="right-column">
