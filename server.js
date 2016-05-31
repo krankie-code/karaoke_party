@@ -25,7 +25,6 @@ app.use(methodOverride(function(req, res){
 }));
 
 // database
-// mongoose.connect(localDB);
 mongoose.connect(mongoUri);
 
 // controllers
