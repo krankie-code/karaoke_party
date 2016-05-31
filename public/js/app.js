@@ -40,7 +40,30 @@
 
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.ENDED) {
-          document.getElementById("next-song").click();
+          
+          // TV shutdown animation
+          $('#show').css('background', 'green');
+          $('#show').css('overflow', 'hidden');
+          $('div#topDiv').animate({
+            //51% for chrome
+            height: "50%",
+            opacity: 1
+          }, 400);
+          $('div#bottomDiv').animate({
+            //51% for chrome
+            height: "50%",
+            opacity: 1
+          }, 400, function(){
+            $('div#centerDiv').css({display: "block"}).animate({
+                width: "0%",
+                left: "50%"
+             }, 300);
+            }
+          );
+
+          setTimeout(function(){
+            document.getElementById("next-song").click()
+          },1200);
         } 
       }
     });

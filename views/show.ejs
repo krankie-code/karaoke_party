@@ -4,6 +4,11 @@
   <% include ../views/partials/head.ejs %>
 </head>
 <body id="show">
+
+  <div id="topDiv"></div>
+  <div id="centerDiv"></div>
+  <div id="bottomDiv"></div>
+  
   <div id="room-container">
     <% if(room.playlist.length >0) { %>
     <div id="left-column">
@@ -16,7 +21,7 @@
             <button class="btn btn-play" id="next-song">Next Song</button>
           </form>
         </div>
-        <div id="bitly-link">Add Songs To This Room:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="bitly"><%= room.bitlyLink %></span></div>
+        <div id="bitly-link">Add Songs To This Room:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="bitly"><a href="/rooms/<%= room.id %>/songs/add"><%= room.bitlyLink %></a></span></div>
       </div>
     </div>
     <% } else { %>
