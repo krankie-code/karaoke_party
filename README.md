@@ -1,7 +1,7 @@
 # Karaoke Party
 (WDI Unit 2 Project - Node.JS, Express, MongoDB, APIs)
 
-[Karaoke Party](http://tube-karaoke.herokuapp.com/rooms/)
+[Link to Karaoke Party](http://tube-karaoke.herokuapp.com/rooms/)
 
 ### Description
 Final project for Unit 2 of General Assembly's Web Development Immersive. 
